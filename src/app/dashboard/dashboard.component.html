@@ -1,3 +1,47 @@
-<h1>Dashboard</h1>
+<img class="logo" src="../../assets/images/logo.svg" />
 
-<a routerLink="/repository/repositoru">link to </a>
+<h1 class="main-title">Explore repositórios no Github.</h1>
+
+<div class="search-container">
+  <input
+    placeholder="Digite aqui"
+    [formControl]="inputControl"
+    [class.has-error]="errors"
+  />
+  <button type="button" (click)="onSearch()">Pesquisar</button>
+</div>
+<span class="error-text">{{ errors }}</span>
+
+<div class="repository-item">
+  <img
+    src="https://avatars.githubusercontent.com/u/45356638?s=460&u=c149839a934e1100148843a0f40571ba3f1a04df&v=4"
+    alt=""
+  />
+  <div>
+    <p>JoseRubensVeiga/angular_forms</p>
+    <span>Descrição do repo</span>
+  </div>
+  <fa-icon [icon]="faChevronRight"></fa-icon>
+</div>
+<div class="repository-item">
+  <img
+    src="https://avatars.githubusercontent.com/u/45356638?s=460&u=c149839a934e1100148843a0f40571ba3f1a04df&v=4"
+    alt=""
+  />
+  <div>
+    <p>JoseRubensVeiga/angular_forms</p>
+    <span>Descrição do repo</span>
+  </div>
+  <fa-icon [icon]="faChevronRight"></fa-icon>
+</div>
+<div class="repository-item">
+  <img
+    src="https://avatars.githubusercontent.com/u/45356638?s=460&u=c149839a934e1100148843a0f40571ba3f1a04df&v=4"
+    alt=""
+  />
+  <div>
+    <p>JoseRubensVeiga/angular_forms</p>
+    <span>Descrição do repo</span>
+  </div>
+  <fa-icon [icon]="faChevronRight"></fa-icon>
+</div>

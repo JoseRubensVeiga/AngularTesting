@@ -7,9 +7,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #3a3a3a;
+  outline: 0;
 }
 
 body {
   min-height: 100vh;
-  background: #f0f0f0;
+  background: #f2f2fa;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-position-x: calc(50% + 245px);
+  background-image: url(./assets/images/github.svg);
+
+  display: flex;
+  justify-content: center;
+}
+
+app-root {
+  max-width: 700px;
+  width: 100%;
+}
+
+button:hover {
+  cursor: pointer;
 }
