@@ -1,3 +1,37 @@
-<h1>Repository</h1>
+<div class="logo-container">
+  <img src="../../assets/images/logo.svg" />
+  <a routerLink="/"><fa-icon [icon]="faChevronLeft"></fa-icon> Voltar</a>
+</div>
 
-<a routerLink="/">link to </a>
+<ng-container *ngIf="repository">
+  <div class="main-info-container">
+    <img [src]="repository.owner.avatar_url" [alt]="repository.owner.login" />
+    <div>
+      <p>{{ repository.full_name }}</p>
+      <span>{{ repository.description }}</span>
+    </div>
+  </div>
+
+  <div class="secondary-info-container">
+    <div>
+      <h3>1080</h3>
+      <p>Stars</p>
+    </div>
+    <div>
+      <h3>1080</h3>
+      <p>Stars</p>
+    </div>
+    <div>
+      <h3>1080</h3>
+      <p>Stars</p>
+    </div>
+  </div>
+
+  <a class="issue-item" [href]="repository.issues_url" target="_blank">
+    <div>
+      <p>{{ repository.full_name }}</p>
+      <span>{{ repository.description }}</span>
+    </div>
+    <fa-icon [icon]="faChevronRight"></fa-icon>
+  </a>
+</ng-container>
