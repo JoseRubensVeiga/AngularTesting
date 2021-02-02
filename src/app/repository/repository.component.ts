@@ -4,6 +4,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
+import { Issue } from '../models/Issue';
 import { Repository } from '../models/Repository';
 import { GithubService } from '../services/github.service';
 
@@ -21,6 +22,7 @@ export class RepositoryComponent implements OnInit {
   faChevronLeft = faChevronLeft;
   faChevronRight = faChevronRight;
   repository: Repository;
+  issues: Issue[];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -42,6 +44,14 @@ export class RepositoryComponent implements OnInit {
   private loadRepository(repositoryName: string): void {
     this.githubService.getRepository(repositoryName).subscribe((repository) => {
       this.repository = repository;
+
+      this.loadIssues(repositoryName);
+    });
+  }
+
+  private loadIssues(repositoryName: string): void {
+    this.githubService.getIssues(repositoryName).subscribe((issues) => {
+      this.issues = issues;
     });
   }
 }

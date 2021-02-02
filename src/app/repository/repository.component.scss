@@ -66,6 +66,7 @@
     p {
       font-size: 20px;
       color: #6c6c80;
+      margin-top: 5px;
     }
   }
 }
@@ -78,6 +79,7 @@
   padding: 15px;
   min-height: 80px;
   transition: 0.3s;
+  color: #a8a8b3;
   cursor: pointer;
 
   & + .issue-item {
@@ -101,7 +103,6 @@
     }
 
     span {
-      color: #a8a8b3;
       display: block;
       margin-top: 5px;
     }

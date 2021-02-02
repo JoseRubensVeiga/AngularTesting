@@ -14,24 +14,27 @@
 
   <div class="secondary-info-container">
     <div>
-      <h3>1080</h3>
+      <h3>{{ repository.stargazers_count }}</h3>
       <p>Stars</p>
     </div>
     <div>
-      <h3>1080</h3>
-      <p>Stars</p>
+      <h3>{{ repository.forks_count }}</h3>
+      <p>Forks</p>
     </div>
     <div>
-      <h3>1080</h3>
-      <p>Stars</p>
+      <h3>{{ repository.open_issues_count }}</h3>
+      <p>Issue abertas</p>
     </div>
   </div>
 
-  <a class="issue-item" [href]="repository.issues_url" target="_blank">
-    <div>
-      <p>{{ repository.full_name }}</p>
-      <span>{{ repository.description }}</span>
-    </div>
-    <fa-icon [icon]="faChevronRight"></fa-icon>
-  </a>
+  <ng-container *ngFor="let issue of issues">
+    <a class="issue-item" [href]="issue.html_url" target="_blank">
+      <div>
+        <p>{{ issue.title }}</p>
+        <span>{{ issue.user.login }}</span>
+      </div>
+      <fa-icon [icon]="faChevronRight"></fa-icon>
+    </a>
+  </ng-container>
+  <p *ngIf="!issues?.length">Carregando issues...</p>
 </ng-container>
