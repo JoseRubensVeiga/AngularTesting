@@ -5,7 +5,7 @@ import { RepositoryComponent } from './repository';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'repository/:repository', component: RepositoryComponent },
+  { path: 'repository/:owner/:repositoryName', component: RepositoryComponent },
 ];
 
 @NgModule({

@@ -12,36 +12,15 @@
 </div>
 <span class="error-text">{{ errors }}</span>
 
-<div class="repository-item">
-  <img
-    src="https://avatars.githubusercontent.com/u/45356638?s=460&u=c149839a934e1100148843a0f40571ba3f1a04df&v=4"
-    alt=""
-  />
+<a
+  class="repository-item"
+  *ngFor="let repository of repositories"
+  [routerLink]="'repository/' + repository.full_name"
+>
+  <img [src]="repository.owner.avatar_url" [alt]="repository.owner.login" />
   <div>
-    <p>JoseRubensVeiga/angular_forms</p>
-    <span>Descrição do repo</span>
+    <p>{{ repository.full_name }}</p>
+    <span>{{ repository.description }}</span>
   </div>
   <fa-icon [icon]="faChevronRight"></fa-icon>
-</div>
-<div class="repository-item">
-  <img
-    src="https://avatars.githubusercontent.com/u/45356638?s=460&u=c149839a934e1100148843a0f40571ba3f1a04df&v=4"
-    alt=""
-  />
-  <div>
-    <p>JoseRubensVeiga/angular_forms</p>
-    <span>Descrição do repo</span>
-  </div>
-  <fa-icon [icon]="faChevronRight"></fa-icon>
-</div>
-<div class="repository-item">
-  <img
-    src="https://avatars.githubusercontent.com/u/45356638?s=460&u=c149839a934e1100148843a0f40571ba3f1a04df&v=4"
-    alt=""
-  />
-  <div>
-    <p>JoseRubensVeiga/angular_forms</p>
-    <span>Descrição do repo</span>
-  </div>
-  <fa-icon [icon]="faChevronRight"></fa-icon>
-</div>
+</a>

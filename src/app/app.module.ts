@@ -9,6 +9,7 @@ import { RepositoryComponent } from './repository';
 import { DashboardComponent } from './dashboard';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, RepositoryComponent, DashboardComponent],
@@ -16,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
 
     AppRoutingModule,
     RouterModule,
