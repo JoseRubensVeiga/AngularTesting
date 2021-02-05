@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { GithubService } from '../services/github.service';
 
 import { RepositoryComponent } from './repository.component';
 
@@ -8,9 +11,10 @@ describe('RepositoryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RepositoryComponent ]
-    })
-    .compileComponents();
+      declarations: [RepositoryComponent],
+      imports: [RouterModule.forRoot([]), HttpClientTestingModule],
+      providers: [GithubService],
+    }).compileComponents();
   });
 
   beforeEach(() => {
